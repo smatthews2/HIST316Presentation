@@ -1,10 +1,10 @@
 body {
-    background-image: url("Resources/background.jpg");
+    background-image: url("background.jpg");
     background-attachment: fixed;
     background-size: 20% 100%;
 }
 
-p, ul>li {
+p, ul>li, ol>li {
  font-size: 20pt;
  color: white;
 }
@@ -12,7 +12,7 @@ p, ul>li {
 h1#textlogo {
     font-size: 40pt;
     text-align: center;
-    color: black
+    color: white
 }
 
 h1 {
