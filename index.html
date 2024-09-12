@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Games, Gambling, and Morality Prototype</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="svg-playing-cards\playing-cards.css">
+        <script src="script.js"></script>
+        <script src="cards.js"></script>
+        <script>
+            function resetGame(){
+                const myNode = document.getElementById("mainBoard");
+                
+                // Clear the container for the board.
+                while (myNode.lastElementChild) {
+                    myNode.removeChild(myNode.lastElementChild);
+                }
+
+                if(document.getElementById('hnefatafl').checked) {
+                    console.log("Hnefatafl!");
+                    assembleHnefataflBoard();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="textlogo">HIST 316 Game Presentation</h1>
+        <h2 id="author">Sebastian Matthews — September 12th, 2024</h2>
+
+        <!-- <div id="bets">
+            <input type="number" id="farthings" name="farthings" min="0" max="2">
+            <label for="farthings">Farthings</label> 
+            <br>
+            <input type="number" id="hapennies" name="hapennies" min="0" max="2">
+            <label for="hapennies">Ha'pennies</label> 
+        </div> -->
+
+        <div id="container">
+            <div id="main">
+                <div id="mainBoard"></div>
+            <br>
+            <div id="cardBoard">
+                <div id="player-1"></div>
+                <div id="player-2"></div>
+            </div>
+        
+            <div id="controlPanel">
+                <button onclick="resetGame()" style="margin: 5px;">Reset the Game</button> 
+                <input type="radio" id="hnefatafl" name="game_type" value="hnefatafl" checked>
+                <label for="hnefatafl">Hnefatafl</label> 
+
+                <br>
+                <button onclick="determineDealer()" style="margin: 5px;">Determine Dealer</button>
+                <input type="radio" id="maw" name="card_game_type" value="maw" checked>
+                <label for="maw">Maw(Spoil Five)</label>
+
+                <input type="radio" id="noddy" name="card_game_type" value="noddy">
+                <label for="noddy">Noddy</label>
+                
+                <br>
+                <button onclick="splitDeck(cards)" style="margin: 5px;">Split Deck</button>
+            </div>
+        </div>
+            <div id="aside">
+                <div id="description">
+                    <h1>Hnefatafl, Tawlbwrdd, and Other Board Games</h1>
+                        <h2>What games were popular under the Tudor and Stuart regimes?</h2>
+                        <p>
+                            Board games, such as <a href="http://ninemensmorris.ist.tugraz.at:8080/" target="_blank">Nine Men's Morris</a>
+                            (a game thought to have been brought over by the Romans, along with its smaller variants, e.g. Three and Six Men's Morris) 
+                            or Tawlbwrdd, a Welsh rendition of Hnefatafl that primarily varied in its setup were enjoyed by many Tudor nobles.
+                            <br>
+                            <br>
+                            Card games such as <a href="https://www.cassidycash.com/wp-content/uploads/woocommerce_uploads/2019/03/How-to-Play-Noddy.pdf" target="_blank">Noddy</a> or <a href="https://www.parlettgames.uk/histocs/maw.html" target="_blank">Maw</a> were also enjoyed in their respectful periods, with the former being played during the time of Shakespeare and
+                            the latter being brought over by Mary, Queen of Scots and played in the court of James VI and I. Both of these games are akin to cribbage or craps.
+                        </p>
+
+                    <h1>Legislation and Morality regarding Games/Gambling</h1>
+                    <h2>What decrees or statutes were passed to regulate gaming?</h2>
+                    <p>
+                        The Unlawful Games Act of 1541 under Henry VIII outlined a 40-shilling "penalty for maintenance of a house for unlawful games," 
+                        but was never enforced due to the royal court participating in such entertainment; Henry VII and Elizabeth of York were reported to have gambled as a pastime. 
+                        Mary I was also a notorious gambler, despite having to consistently borrow money from the ladies-in-waiting to keep playing.
+                        <br>
+                        <br>
+                        The 1628 banning of French cards under Charles I caused the production of "facsimilies" within English soil, 
+                        leading to the King of Hearts in the standard 52 deck being regarded as the "suicide king" because he's stabbing himself in the head.
+                        <br>
+                        <br>
+                        The Book of Sports under James I outlined what games were "licit" under the Sabbath due to Puritan outrage of idle enjoyment, allowing
+                        dancing, archery, leaping, vaulting, May games(and May-poles), and "Whitsun ales and morris dances"; “bear and bull-baiting, interludes, and (at all times in the meane 
+                        sort of people by law prohibited) bowling" were explicitly condemned.
+                    </p>
+                    <h2>John Gerard, S.J. and Avoiding Religious Persecution</h2>
+                    <p>
+                        "He found us, or so he thought, playing cards.
+                        Actually we had put the cards away to attend to better things as soon as the
+                        servants had gone downstairs, and we had resumed our game when this
+                        gentleman was announced. So he found us sitting at the card-table piled with
+                        money.
+                        I should explain that whenever I was with Catholics and we had to stage a
+                        game in circumstances like these, we had an understanding that <strong>everybody
+                        got his money back at the end and that the loser said an Ave Maria for every
+                        counter returned.</strong> In this way I often played with brother Digby and others,
+                        when there was occasion to act a part and make bystanders think that we
+                        were playing for money in good earnest"(Gerard 162).
+                        <br>
+                        <br>
+                        "So I told Master Roger Lee that the lady had now made up her mind and
+                        was ready to become a Catholic and that all she was waiting for was to see a
+                        priest. I asked him therefore to break the news that I was one.
+                        This he did but the lady would not believe it. She was amazed. “How can
+                        he possibly be a priest?” she protested. “Why, the man lives like a courtier.
+                        Haven’t you watched him playing cards with my husband—and the way he
+                        plays, he must have been at the game for a long time. And he’s been out
+                        hunting with my husband, and I’ve heard him myself talking about hunting and
+                        about hawking, and he never trips in his terms. No one could do that without
+                        being caught out unless <strong>he was thoroughly familiar with the sport</strong>.” "(Gerard 158).
+                    </p>
+
+                    <img src="King-of-Hearts.webp" alt="Suicide King"> 
+                    <figcaption><em>Fig. 1a - The "Suicide King" pattern in the modern 52-card set.</em></figcaption>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 12pt;">
+            Copyright © 2024 Sebastian Matthews, LLC. All rights reserved. 
+            <br> 
+            <a href="mailto:smatthews2@zagmail.gonzaga.edu">smatthews2@zagmail.gonzaga.edu</a> <a href="https://github.com/smatthews2">https://github.com/smatthews2</a>
+        </p>
+    </body>
+</html>

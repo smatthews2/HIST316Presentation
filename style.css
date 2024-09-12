@@ -1,0 +1,260 @@
+body {
+    background-image: url("Resources/background.jpg");
+    background-attachment: fixed;
+    background-size: 20% 100%;
+}
+
+p, ul>li {
+ font-size: 20pt;
+ color: white;
+}
+
+h1#textlogo {
+    font-size: 40pt;
+    text-align: center;
+    color: black
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2#author {
+    text-align: center;
+    background-color: brown;
+    color: white;
+}
+
+h2{
+    color: white
+}
+
+figcaption {
+    color: white;
+
+}
+
+img {
+    width: 33%;
+    height: 33%;
+    margin: 30px;
+    display: inline-block;
+    object-fit: contain;
+}
+
+#mainBoard {
+    /* Board is in a 1:2 aspect ratio. */
+    width: 480px;
+    height: 960px;
+    border: 1px solid black;
+}
+
+#controlPanel {
+    background: white;
+}
+
+/* Formatting for main page. */
+
+div#container {
+    display: flex;
+    flex-direction: row;
+}
+
+div#main {
+    flex: 0 1 30%;
+    margin: 30px
+}
+
+div#aside {
+    background: brown;
+    flex: 0 1 70%;
+    height: 50%;
+}
+
+/* Below is tile and piece styling for Rithmomachia. */
+
+div.tile {
+ width:60px;
+ height:60px;
+ float:left;
+ position: relative;
+}
+
+div.evencircle {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: tan;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.oddcircle {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: brown;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.eventriangle {
+    width: 0;
+    height: 0;
+    border-left: 27px solid transparent;
+    border-right: 27px solid transparent;
+    border-bottom: 54px solid tan;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.oddtriangle {
+    width: 0;
+    height: 0;
+    border-left: 27px solid transparent;
+    border-right: 27px solid transparent;
+    border-top: 54px solid brown;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.evensquare {
+    width: 90%;
+    height: 90%;
+    background: tan;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.oddsquare {
+    width: 90%;
+    height: 90%;
+    background: brown;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.evenpyramid {
+	border-bottom: 54px solid tan;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	height: 0;
+	width: 30px;
+    margin: 3px;
+}
+
+div.oddpyramid {
+	border-bottom: 54px solid brown;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	height: 0;
+	width: 30px;
+    margin: 3px;
+}
+
+/* Below is piece styling for Hnefatafl. */
+
+div.attacker {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.defender {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+div.defender-king {
+    width: 90%;
+    height: 90%;
+    background: red;
+    position: absolute;
+    text-align: center;
+    margin: 3px;
+}
+
+/* Below is styling for the timeline. */
+
+.timeline {
+    height: 250px;
+    margin: 1em;
+    line-height: 250px;
+    position: relative;
+    text-align: center;
+  }
+  .timeline:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0%;
+    height: 26px;
+    margin-top: -13px;
+    background: blue;
+  }
+  .event {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 0 50px;
+    display: inline-block;
+    background: #e59741; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #e59741 21%, #c22d0b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #e59741 21%,#c22d0b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #e59741 21%,#c22d0b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 50%;
+    color: white;
+    font-size:14px;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+  .detail {
+    position: absolute;
+    background: brown;
+    line-height: 3em;
+    white-space: nowrap;
+    left: 100%;
+  }
+  .event:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    width: 6px;
+    background: greenyellow;
+    height: 50px;
+  }
+
+  .event:hover{
+    background: red; /* Old browsers */
+  }
+
+  .event.up:before {
+    top: -100%;
+  }
+  .event.down:before {
+    top: 100%;
+  }
+  .up .detail {
+    top: -50px;
+  }
+  .down .detail {
+    bottom: -50px;
+  }
